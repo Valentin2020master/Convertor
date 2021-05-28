@@ -11,17 +11,21 @@
 
 
 <div>
-    <form action="/convert" method="get">
+
+    <form action="/converts" method="get">
         <label> Temperatura</label>
 
-        <input name="temperatura" type="text"/>
+        <input name="temperature" type="text" th:value="${convert.temperature}"/>
 
         <label> ConvertIn</label>
 
-        <input name="convertIn" type="text" />
+        <input name="convertIn" type="text" th:value="${convert.convertIn}"/>
 
         <input type="submit"/>
 
+
+        <!--<p><span th:text="${convert.temperature}"/></p>
+        <p><span th:text="${convert.convertIn}"/></p>-->
     </form>
 
 

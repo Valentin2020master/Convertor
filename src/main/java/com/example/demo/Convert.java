@@ -1,6 +1,8 @@
 package com.example.demo;
-
 public class Convert {
+
+
+
     public static String convertTemp(float temperature, char convertIn) {
 
         if (convertIn == 'F') {
@@ -10,5 +12,8 @@ public class Convert {
         } else {
             return "Puteți introduce F sau C ca argument convertIn";
         }
+
     }
+
+
 }
