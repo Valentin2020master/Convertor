@@ -12,10 +12,6 @@ public class ConvertController {
 
     private Convert convert;
 
-    public ConvertController() {
-        this.convert = new Convert();
-    }
-
     public Convert getConvert() {
         return convert;
     }
@@ -24,7 +20,7 @@ public class ConvertController {
     public String get(Model model, @RequestParam(required = false) String temperature, @RequestParam(required = false) String convertIn) {
         Temperatura convert = new Temperatura();
         if (temperature != null) {
-            Convert.convertTemp(0, 'F');
+            Convert.convertTemp(convert.setTemperature(Float.parseFloat(temperature)), convert.setConvertTo(convertIn.charAt(0)));
         }
         model.addAttribute("convert", convert);
         return "convert";

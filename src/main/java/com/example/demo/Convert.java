@@ -1,9 +1,7 @@
 package com.example.demo;
+
 public class Convert {
-
-
-
-    public static String convertTemp(float temperature, char convertIn) {
+    public static String convertTemp(float temperature, char convertIn, Temperatura convert) {
 
         if (convertIn == 'F') {
             return "Am convertit " + temperature + " grade C. Temperatura în Fahrenheit este " + (9 * temperature / 5 + 32) + " F";
@@ -12,8 +10,5 @@ public class Convert {
         } else {
             return "Puteți introduce F sau C ca argument convertIn";
         }
-
     }
-
-
 }

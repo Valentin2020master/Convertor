@@ -4,32 +4,18 @@
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
-
-
 <body>
 <h2>Convertor de temperatura </h2>
-
-
 <div>
-
     <form action="/converts" method="get">
         <label> Temperatura</label>
-
         <input name="temperature" type="text" th:value="${convert.temperature}"/>
-
         <label> ConvertIn</label>
-
         <input name="convertIn" type="text" th:value="${convert.convertIn}"/>
-
         <input type="submit"/>
-
-
         <!--<p><span th:text="${convert.temperature}"/></p>
         <p><span th:text="${convert.convertIn}"/></p>-->
     </form>
-
-
-
     <!--<input type="text" name="convertIn" th:value="${convert.convertIn}" />-->
 </div>
 
