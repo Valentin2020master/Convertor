@@ -10,18 +10,22 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ConvertController {
 
-    private Convert convert;
+    public Convert convert;
 
+    public ConvertController() {
+        this.convert = new Convert();
+    }
     public Convert getConvert() {
         return convert;
     }
-
     @GetMapping("/converts")
     public String get(Model model, @RequestParam(required = false) String temperature, @RequestParam(required = false) String convertIn) {
         Temperatura convert = new Temperatura();
+        String mesaj = "";
         if (temperature != null) {
-            Convert.convertTemp(convert.setTemperature(Float.parseFloat(temperature)), convert.setConvertTo(convertIn.charAt(0)));
+           mesaj = Convert.convertTemp(Float.parseFloat(temperature), convertIn.charAt(0), convert);
         }
+        model.addAttribute("mesaj", mesaj);
         model.addAttribute("convert", convert);
         return "convert";
 
@@ -30,4 +34,5 @@ public class ConvertController {
     public void setConvert(Convert convert) {
         this.convert = convert;
     }
+
 }
